@@ -3,5 +3,3 @@ Flask-SQLAlchemy
 pandas
 openpyxl
 gunicorn
-werkzeug
-functools
