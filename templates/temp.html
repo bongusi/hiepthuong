@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kết quả</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <div class="card-body text-center">
+                        <h1 class="card-title mb-4">🔴[TRỰC TIẾP] KẾT QUẢ HIỆP THƯƠNG</h1>
+                        <div id="results">
+                            <p class="h4">Tổng lượt hiệp thương: <span id="total">0</span></p>
+                            <p class="h4 text-success">Đồng ý: <span id="agree">0</span></p>
+                            <p class="h4 text-danger">Không đồng ý: <span id="disagree">0</span></p>
+                        </div>
+                        <a href="/" class="btn btn-primary mt-4">Về trang chính</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to fetch and update results
+        function fetchResults() {
+            $.ajax({
+                url: '/api/results',
+                method: 'GET',
+                success: function(data) {
+                    $('#total').text(data.total);
+                    $('#agree').text(data.agree);
+                    $('#disagree').text(data.disagree);
+                },
+                error: function(err) {
+                    console.error('Error fetching results:', err);
+                }
+            });
+        }
+
+        // Update results every 2 seconds
+        setInterval(fetchResults, 2000);
+
+        // Fetch results immediately when page loads
+        fetchResults();
+    </script>
+</body>
+</html>

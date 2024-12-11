@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <!-- Header -->
+        <div class="text-center">
+            <h1 class="display-5 fw-bold text-primary">Hệ thống quản lý</h1>
+            <p class="text-muted">Quản lý hệ thống hiệp thương và người dùng</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="row mt-4">
+            <!-- Manage Users -->
+            <div class="col-md-4 mb-3">
+                <div class="card shadow">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-dark">Quản lý người dùng</h5>
+                        <p class="card-text text-muted">Xem, thêm hoặc xóa người dùng trong hệ thống.</p>
+                        <a href="/users" class="btn btn-success w-100">Truy cập</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Import Users -->
+            <div class="col-md-4 mb-3">
+                <div class="card shadow">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-dark">Import danh sách</h5>
+                        <p class="card-text text-muted">Nhập danh sách người dùng từ file Excel.</p>
+                        <a href="/import" class="btn btn-success w-100">Truy cập</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quản lý văn kiện -->
+            <div class="col-md-4 mb-3">
+                <div class="card shadow">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-dark">Quản lý văn kiện</h5>
+                        <p class="card-text text-muted">Tải lên và quản lý các văn kiện hiệp thương.</p>
+                        <a href="/upload" class="btn btn-success w-100">Truy cập</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Xem văn kiện -->
+            <div class="col-md-4 mb-3">
+                <div class="card shadow">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-dark">Xem văn kiện</h5>
+                        <p class="card-text text-muted">Xem văn kiện.</p>
+                        <a href="/view_documents" class="btn btn-success w-100">Truy cập</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Xem kết quả trực tiếp -->
+            <div class="col-md-4 mb-3">
+                <div class="card shadow">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-dark">Kết quả hiệp thương</h5>
+                        <p class="card-text text-muted">Kết quả hiệp thương trực tiếp.</p>
+                        <a href="/live_results" class="btn btn-success w-100">Truy cập</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Đăng ký + phân quyền -->
+            <div class="col-md-4 mb-3">
+                <div class="card shadow">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-dark">Tạo tài khoản</h5>
+                        <p class="card-text text-muted">Đăng ký và phân quyền người dùng.</p>
+                        <a href="/09012004" class="btn btn-success w-100">Truy cập</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to Home Button -->
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-secondary">Về trang chủ</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

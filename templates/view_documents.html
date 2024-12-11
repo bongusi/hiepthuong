@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Văn kiện</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Văn kiện Đại hội</h1>
+        <ul class="list-group">
+            {% for file in files %}
+                <li class="list-group-item d-flex justify-content-between">
+                    {{ file }}  <!-- Hiển thị tên văn kiện -->
+                    <a href="{{ url_for('static', filename='uploads/' + file) }}" class="btn btn-info btn-sm" target="_blank">View</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="/" class="btn btn-secondary mt-3">Back to Home</a>
+    </div>
+</body>
+</html>
